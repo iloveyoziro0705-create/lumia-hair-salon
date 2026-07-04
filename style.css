@@ -18,7 +18,7 @@
   --clr-gold-light:  #E8D5B0;
   --clr-text:        #1A1A1A;
   --clr-text-sub:    #6B6560;
-  --clr-text-light:  #A39C95;
+  --clr-text-light:  #7A736C;
   --clr-border:      #E8E2D9;
   --clr-line:        #06C755;
   --clr-line-dark:   #059944;
@@ -129,6 +129,23 @@ a:focus-visible {
   outline: 2px solid var(--clr-gold);
   outline-offset: 3px;
   border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 1000;
+  padding: 0.75rem 1.5rem;
+  background: var(--clr-black);
+  color: var(--clr-white);
+  font-size: var(--fs-sm);
+  transition: top var(--dur-fast) var(--ease);
+}
+
+.skip-link:focus {
+  top: 0;
+  opacity: 1;
 }
 
 ul, ol {
@@ -812,12 +829,12 @@ details summary::-webkit-details-marker { display: none; }
     gap: clamp(3rem, 6vw, 6rem);
   }
 
-  .zigzag__block--reverse .zigzag__inner {
-    direction: rtl;
+  .zigzag__block--reverse .zigzag__image-wrap {
+    order: 2;
   }
 
-  .zigzag__block--reverse .zigzag__inner > * {
-    direction: ltr;
+  .zigzag__block--reverse .zigzag__text {
+    order: 1;
   }
 }
 
